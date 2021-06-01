@@ -30,10 +30,8 @@ def create_app(test_config=None):
     from flaskr import db
     db.init_app(app)
 
-    from flaskr import auth
+    from flaskr import auth, blog
     app.register_blueprint(auth.bp)
-    
-    from flaskr import blog
     app.register_blueprint(blog.bp)
     
     app.add_url_rule('/', endpoint='index')
